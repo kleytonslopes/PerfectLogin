@@ -1,0 +1,67 @@
+﻿<Window x:Class="PerfectLogin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PerfectLogin" xmlns:components="clr-namespace:PerfectLogin.Components"
+        mc:Ignorable="d"
+        Title="Perfet Login" Height="324" Width="709.5" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_NewExecuted"/>
+    </Window.CommandBindings>
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Command="New" ToolTip="Add new account">
+                    <Image Source="Icons/plus_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Edit a account">
+                    <Image Source="Icons/edit_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Confirm operation">
+                    <Image Source="Icons/confirm_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Cancel operation">
+                    <Image Source="Icons/cancel_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Remove account">
+                    <Image Source="Icons/trash_32.png" Width="32" Height="32"></Image>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button ToolTip="First account">
+                    <Image Source="Icons/first_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Previous account">
+                    <Image Source="Icons/previous_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Separator/>
+                <Button ToolTip="Next account">
+                    <Image Source="Icons/next_32.png" Width="32" Height="32"></Image>
+                </Button>
+                <Button ToolTip="Last account">
+                    <Image Source="Icons/last_32.png" Width="32" Height="32"></Image>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button ToolTip="Start Perfect World without account">
+                    <Image Source="Icons/pwicon.ico" Width="32" Height="32"></Image>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <components:ucCharacters DockPanel.Dock="Left">
+
+        </components:ucCharacters>
+        <Grid DockPanel.Dock="Right">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <components:ucOtherAccount/>
+                    <components:ucOtherAccount/>
+                </StackPanel>
+                <components:ucAccount></components:ucAccount>
+                <components:ucAccount></components:ucAccount>
+                <components:ucAccount></components:ucAccount>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
